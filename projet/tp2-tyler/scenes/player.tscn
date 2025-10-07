@@ -1,9 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://cpnrw63kyk3am"]
+[gd_scene load_steps=36 format=3 uid="uid://cpnrw63kyk3am"]
 
 [ext_resource type="Texture2D" uid="uid://d3alq2flnmnn7" path="res://assets/images/FREE_Samurai 2D Pixel Art v1.2/FREE_Samurai 2D Pixel Art v1.2/Sprites/IDLE.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://celyev327npm8" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cwa4i1v0spd67" path="res://assets/images/FREE_Samurai 2D Pixel Art v1.2/FREE_Samurai 2D Pixel Art v1.2/Sprites/ATTACK 1.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bx5i83udhp5sy" path="res://assets/images/FREE_Samurai 2D Pixel Art v1.2/FREE_Samurai 2D Pixel Art v1.2/Sprites/RUN.png" id="4_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://b27enbe0pjjjg" path="res://assets/audio/retro-jump-3-236683.mp3" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://b1jr71eg20c68" path="res://assets/audio/running-on-gravel-301880.mp3" id="5_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -228,3 +230,9 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_jej6c")
+
+[node name="run" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tuyoq")
+
+[node name="jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qlg0r")
