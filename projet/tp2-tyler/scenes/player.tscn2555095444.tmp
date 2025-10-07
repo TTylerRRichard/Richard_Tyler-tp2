@@ -231,8 +231,8 @@ autoplay = "idle"
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_jej6c")
 
+[node name="run" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tuyoq")
+
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qlg0r")
-
-[node name="run" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_tuyoq")
