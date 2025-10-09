@@ -7,8 +7,22 @@ const JUMP_VELOCITY = -300.0
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var jump: AudioStreamPlayer2D = $jump
 @onready var run: AudioStreamPlayer = $run
+@onready var collision_shape_2d = $CollisionShape2D
 
-
+func use_power_up():
+	var powerUpDuration = 5
+	
+	AnimatedSprite2D.scale *= 2
+	AnimatedSprite2D.position.y *= 2
+	CollisionShape2D.scale *= 2
+	CollisionShape2D.position.y *= 2
+	await get_tree().create_timer(powerUpDuration).timeout
+	
+	AnimatedSprite2D.scale /=2
+	AnimatedSprite2D.position.y /= 2
+	CollisionShape2D.scale /=2
+	CollisionShape2D.position.y /=2
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
