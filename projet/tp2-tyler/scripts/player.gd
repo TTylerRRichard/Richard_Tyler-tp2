@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.play("jump")
 	
-	# ✅ Play running sound only when moving on the ground
+	
 	if is_on_floor() and direction != 0:
 		if not run.playing:
 			run.play()
